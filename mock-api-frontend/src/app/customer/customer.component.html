@@ -1,0 +1,39 @@
+<h1>Customers Screen</h1>
+<table border="1">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>Pin code</th>
+    <th>Number Of orders</th>
+  </tr>
+  <tr *ngFor="let customer of customers">
+    <td>
+        {{customer["firstName"]}}
+    </td>
+    <td>
+        {{customer["lastName"]}}
+    </td>
+    <td>
+        {{customer["address"]}}
+    </td>
+    <td>
+        {{customer["pinCode"]}}
+    </td>
+    <td>
+        {{customer["numberOfOrders"]}}
+    </td>
+  </tr>
+</table>
+
+
+
+<h2>Add New Customer</h2>
+<div>
+  <li>Enter First Name: <input [(ngModel)]="firstName" type="text" /></li>
+  <li>Enter Last Name: <input [(ngModel)]="lastName" type="text" /></li>
+  <li>Enter Address : <input [(ngModel)]="address" type="text" /></li>
+  <li>Enter Pincode: <input [(ngModel)]="pinCode" type="text" /></li>
+  <li>Enter Number of orders: <input [(ngModel)]="numberOfOrders" type="number" /></li>
+  <button (click)="onSubmit()" type="button">Submit</button>
+</div>
